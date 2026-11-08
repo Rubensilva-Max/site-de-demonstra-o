@@ -1,0 +1,18 @@
+const $=(s,root=document)=>root.querySelector(s), $$=(s,root=document)=>[...root.querySelectorAll(s)];
+const drawer=$('#cartDrawer'),overlay=$('#cartOverlay'),cart={};
+const money=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+function openCart(){drawer.classList.add('open');overlay.classList.add('open');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function closeCart(){drawer.classList.remove('open');overlay.classList.remove('open');drawer.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+function renderCart(){
+ const entries=Object.values(cart),count=entries.reduce((s,x)=>s+x.qty,0),total=entries.reduce((s,x)=>s+x.qty*x.price,0);
+ $('#cartCount').textContent=count;$('#cartTotal').textContent=money(total);
+ $('#cartItems').innerHTML=entries.length?entries.map(x=>`<div class="cart-row"><div><h4>${x.name}</h4><small>${money(x.price)} · ${money(x.price*x.qty)}</small></div><div class="qty"><button data-action="minus" data-id="${x.id}" aria-label="Diminuir">−</button><span>${x.qty}</span><button data-action="plus" data-id="${x.id}" aria-label="Aumentar">+</button></div></div>`).join(''):'<div class="empty-cart">Seu pedido começa com<br><em>uma boa escolha.</em></div>';
+}
+$$('.add-btn').forEach(btn=>btn.addEventListener('click',()=>{const name=btn.dataset.name,price=Number(btn.dataset.price),id=name.toLowerCase().replace(/\W/g,'-');if(!cart[id])cart[id]={id,name,price,qty:0};cart[id].qty++;renderCart();btn.textContent='✓';setTimeout(()=>btn.textContent='+',700)}));
+$('#cartItems').addEventListener('click',e=>{const b=e.target.closest('button[data-action]');if(!b)return;const item=cart[b.dataset.id];if(!item)return;item.qty+=b.dataset.action==='plus'?1:-1;if(item.qty<=0)delete cart[b.dataset.id];renderCart()});
+$('#cartFab').addEventListener('click',openCart);$('#openCartBottom').addEventListener('click',openCart);$('#closeCart').addEventListener('click',closeCart);overlay.addEventListener('click',closeCart);document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCart()});
+$('#checkout').addEventListener('click',()=>{const items=Object.values(cart);if(!items.length){alert('Adicione pelo menos um item ao pedido.');return}const name=$('#orderName').value.trim();if(!name){$('#orderName').focus();alert('Digite seu nome para continuar.');return}const type=$('#orderType').value;const total=items.reduce((s,x)=>s+x.price*x.qty,0);const lines=items.map(x=>`• ${x.qty}x ${x.name} — ${money(x.price*x.qty)}`).join('\n');const msg=`Olá, Casa Nera! Meu nome é ${name}.\nGostaria de fazer um pedido para ${type.toLowerCase()}:\n\n${lines}\n\nTotal: ${money(total)}\n\nPodem confirmar, por favor?`;const phone='5500000000000';window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`,'_blank','noopener')});
+$$('.tab').forEach(tab=>tab.addEventListener('click',()=>{$$('.tab').forEach(t=>t.classList.toggle('active',t===tab));const filter=tab.dataset.filter;$$('.dish-card').forEach(card=>card.hidden=filter!=='todos'&&card.dataset.category!==filter)}));
+const menuToggle=$('.menu-toggle');menuToggle.addEventListener('click',()=>{const nav=$('.nav'),open=nav.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open))});$$('.nav a').forEach(a=>a.addEventListener('click',()=>{$('.nav').classList.remove('open');menuToggle.setAttribute('aria-expanded','false')}));
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});$$('.reveal').forEach(el=>observer.observe(el));
+renderCart();

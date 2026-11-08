@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171713">
+  <meta name="description" content="Casa Nera — cozinha autoral, ingredientes de verdade e noites memoráveis.">
+  <title>Casa Nera — Cozinha de fogo & afeto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement"><span>COZINHA DE VERDADE, SEM PRESSA.</span><span>TER–DOM · 18H ÀS 23H</span></div>
+  <header class="header" id="top">
+    <a class="brand" href="#top" aria-label="Casa Nera início"><span class="brand-mark">CN</span><span>CASA <i>NERA</i></span></a>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav">
+      <a href="#conceito">A casa</a><a href="#menu">Cardápio</a><a href="#experiencia">Experiência</a><a href="#visite">Visite-nos</a>
+    </nav>
+    <a class="header-cta" href="#menu">Explorar menu <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-image"></div><div class="hero-shade"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow"><span></span> UMA EXPERIÊNCIA À MESA</p>
+        <h1>O sabor mora<br>nos <em>detalhes.</em></h1>
+        <p class="hero-copy">Ingredientes honestos, fogo aceso e encontros que merecem durar um pouco mais.</p>
+        <div class="hero-actions"><a class="btn btn-light" href="#menu">Descubra o cardápio <span>↗</span></a><a class="text-link" href="#conceito">Conheça a Casa <span>↓</span></a></div>
+      </div>
+      <div class="hero-note"><span>01 / 04</span><span>FEITO COM TEMPO. SERVIDO COM ALMA.</span></div>
+      <div class="vertical-word">COZINHA AUTORAL · DESDE 2018</div>
+    </section>
+
+    <section class="intro section-pad" id="conceito">
+      <div class="intro-label reveal"><span class="tiny-line"></span><span>01 — NOSSA FILOSOFIA</span></div>
+      <div class="intro-main reveal"><h2>Mais que uma refeição.<br><em>Um lugar para ficar.</em></h2><p>A Casa Nera nasceu da vontade de reunir pessoas em torno do que realmente importa: comida feita com cuidado, ingredientes da estação e conversas sem hora para acabar.</p><a class="under-link" href="#experiencia">A história da Casa <span>↗</span></a></div>
+      <div class="intro-photo reveal"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1100&q=85" alt="Mesa de restaurante preparada para uma experiência especial"><span>HOSPITALIDADE EM CADA DETALHE</span></div>
+    </section>
+
+    <section class="menu-section section-pad" id="menu">
+      <div class="section-heading reveal"><div><p class="eyebrow dark"><span></span> 02 — FEITO NA CASA</p><h2>Escolhas que dão<br><em>água na boca.</em></h2></div><p>Um menu vivo, guiado pela estação e pelo prazer de compartilhar. Escolha seus favoritos e monte seu pedido.</p></div>
+      <div class="menu-tabs reveal" role="group" aria-label="Filtrar cardápio"><button class="tab active" data-filter="todos">Tudo</button><button class="tab" data-filter="entradas">Para começar</button><button class="tab" data-filter="principais">Principais</button><button class="tab" data-filter="sobremesas">Sobremesas</button></div>
+      <div class="menu-grid" id="menuGrid">
+        <article class="dish-card reveal" data-category="entradas"><div class="dish-image"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85" alt="Entrada fresca com vegetais"><span class="dish-tag">PARA COMPARTILHAR</span></div><div class="dish-info"><div><h3>Jardim da Nera</h3><p>Folhas da estação, tomate confit, ricota cremosa e crocante de castanhas.</p></div><div class="dish-bottom"><strong>R$ 32</strong><button class="add-btn" data-name="Jardim da Nera" data-price="32" aria-label="Adicionar Jardim da Nera">+</button></div></div></article>
+        <article class="dish-card reveal" data-category="principais"><div class="dish-image"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85" alt="Prato principal grelhado"><span class="dish-tag">FAVORITO DA CASA</span></div><div class="dish-info"><div><h3>Brasa & Ervas</h3><p>Carne grelhada, purê rústico, legumes tostados e molho da casa.</p></div><div class="dish-bottom"><strong>R$ 68</strong><button class="add-btn" data-name="Brasa & Ervas" data-price="68" aria-label="Adicionar Brasa e Ervas">+</button></div></div></article>
+        <article class="dish-card reveal" data-category="principais"><div class="dish-image"><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=85" alt="Massa artesanal com ervas"><span class="dish-tag">FEITO À MÃO</span></div><div class="dish-info"><div><h3>Tagliatelle da Casa</h3><p>Massa fresca, cogumelos salteados, parmesão e azeite de ervas.</p></div><div class="dish-bottom"><strong>R$ 54</strong><button class="add-btn" data-name="Tagliatelle da Casa" data-price="54" aria-label="Adicionar Tagliatelle">+</button></div></div></article>
+        <article class="dish-card reveal" data-category="entradas"><div class="dish-image"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85" alt="Salada colorida e fresca"></div><div class="dish-info"><div><h3>Verde de Estação</h3><p>Vegetais frescos, frutas da estação, sementes e vinagrete cítrico.</p></div><div class="dish-bottom"><strong>R$ 29</strong><button class="add-btn" data-name="Verde de Estação" data-price="29" aria-label="Adicionar Verde de Estação">+</button></div></div></article>
+        <article class="dish-card reveal" data-category="sobremesas"><div class="dish-image"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85" alt="Sobremesa de chocolate"></div><div class="dish-info"><div><h3>Doce Memória</h3><p>Chocolate intenso, creme de baunilha e toque de flor de sal.</p></div><div class="dish-bottom"><strong>R$ 26</strong><button class="add-btn" data-name="Doce Memória" data-price="26" aria-label="Adicionar Doce Memória">+</button></div></div></article>
+        <article class="dish-card reveal" data-category="sobremesas"><div class="dish-image"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=85" alt="Sobremesa delicada com frutas"></div><div class="dish-info"><div><h3>Creme de Baunilha</h3><p>Creme leve, frutas vermelhas e farofa amanteigada.</p></div><div class="dish-bottom"><strong>R$ 24</strong><button class="add-btn" data-name="Creme de Baunilha" data-price="24" aria-label="Adicionar Creme de Baunilha">+</button></div></div></article>
+      </div>
+      <div class="menu-foot reveal"><span>MENU DE DEMONSTRAÇÃO · VALORES ILUSTRATIVOS</span><button class="outline-btn" id="openCartBottom">Ver meu pedido <span>↗</span></button></div>
+    </section>
+
+    <section class="quote-section" id="experiencia"><div class="quote-bg"></div><div class="quote-inner reveal"><p class="eyebrow"><span></span> 03 — O TEMPO À MESA</p><h2>“A melhor parte<br>da noite é <em>ficar.”</em></h2><p>Acenda a conversa. Nós cuidamos do resto.</p><a class="btn btn-light" href="#visite">Venha viver a Casa <span>↗</span></a></div></section>
+
+    <section class="visit section-pad" id="visite">
+      <div class="visit-copy reveal"><p class="eyebrow dark"><span></span> 04 — SUA MESA ESTÁ AQUI</p><h2>Vamos fazer<br><em>uma noite boa?</em></h2><p>Estamos esperando por você. Chame a gente para reservar sua mesa ou tirar dúvidas.</p><a class="btn btn-dark" href="https://wa.me/5500000000000?text=Olá!%20Quero%20conhecer%20a%20Casa%20Nera." target="_blank" rel="noopener">Fale com a Casa <span>↗</span></a></div>
+      <div class="visit-details reveal"><div><span>ENDEREÇO</span><p>Rua das Oliveiras, 120<br>Seu bairro · Sua cidade</p></div><div><span>HORÁRIOS</span><p>Terça a domingo<br>18h às 23h</p></div><div><span>CONTATO</span><p>(00) 00000-0000<br>ola@casanera.com.br</p></div><div class="visit-image"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1100&q=85" alt="Interior acolhedor de restaurante"></div></div>
+    </section>
+  </main>
+  <footer class="footer"><a class="brand" href="#top"><span class="brand-mark">CN</span><span>CASA <i>NERA</i></span></a><span>COZINHA DE FOGO & AFETO</span><span>© 2026 CASA NERA · SITE DEMONSTRATIVO</span></footer>
+
+  <button class="cart-fab" id="cartFab" aria-label="Abrir carrinho"><span class="bag-icon">▱</span><span>Seu pedido</span><b id="cartCount">0</b></button>
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Seu pedido" aria-hidden="true">
+    <div class="cart-head"><div><span>CASA NERA</span><h2>Seu pedido</h2></div><button class="close-cart" id="closeCart" aria-label="Fechar carrinho">×</button></div>
+    <div class="cart-items" id="cartItems"><div class="empty-cart">Seu pedido começa com<br><em>uma boa escolha.</em></div></div>
+    <div class="cart-bottom"><div class="total-line"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div><label class="order-label" for="orderName">Seu nome</label><input id="orderName" class="order-input" placeholder="Como podemos chamar você?"><label class="order-label" for="orderType">Como prefere receber?</label><select id="orderType" class="order-input"><option value="Retirada">Retirada no local</option><option value="Delivery">Delivery</option></select><button class="checkout-btn" id="checkout">Enviar pedido pelo WhatsApp <span>↗</span></button><small>Pedido demonstrativo. Confirme os dados antes de publicar.</small></div>
+  </aside>
+  <script src="script.js"></script>
+</body>
+</html>

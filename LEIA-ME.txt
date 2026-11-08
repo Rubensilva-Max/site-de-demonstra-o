@@ -1,0 +1,24 @@
+CASA NERA — SITE DEMONSTRATIVO
+
+COMO ABRIR:
+1. Extraia o ZIP.
+2. Abra a pasta e toque em index.html para visualizar no navegador.
+3. Para publicar, envie os arquivos index.html, style.css e script.js para a raiz de um repositório GitHub e conecte o repositório ao Vercel.
+
+PERSONALIZAÇÃO OBRIGATÓRIA ANTES DE USAR COM UM CLIENTE:
+- Troque Casa Nera, textos, endereço, horários, e-mail e telefone.
+- Em script.js, procure por: const phone='5500000000000'; e coloque o WhatsApp real com código do país e DDD, somente números.
+- Em index.html, troque o link wa.me/5500000000000 do botão de contato.
+- Os preços e pratos são ilustrativos.
+- As fotos são carregadas online do Unsplash; é necessária conexão com a internet para exibi-las.
+
+FUNCIONALIDADES:
+- Layout responsivo para celular e desktop.
+- Menu filtrável.
+- Carrinho lateral com quantidade e total.
+- Checkout que monta o pedido e abre o WhatsApp.
+- Animações suaves de entrada e hover.
+- Menu mobile.
+
+IMPORTANTE:
+Este é um conceito demonstrativo fictício. Confirme permissões, conteúdo, preços, imagens e dados reais antes de publicar para uma empresa.
